@@ -18,6 +18,7 @@ function love.draw()
             pset(math.random(15), x, y)
         end
     end
+    spr(Annikka, 8, 1)
     
     
     endCanvas()
