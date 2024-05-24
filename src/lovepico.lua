@@ -1,5 +1,20 @@
 ---@diagnostic disable: undefined-global, lowercase-global
 
+function love.load()
+    _init()
+
+end
+
+function love.update(dt)
+ _update(dt)
+end
+
+function love.draw()
+    startCanvas(color.black)
+    _draw()
+    endCanvas()
+end
+
 love.graphics.setDefaultFilter("nearest", "nearest")
 canvas = love.graphics.newCanvas(128, 128)
 
@@ -36,16 +51,16 @@ color.pink = {255, 119, 168}
 color.light_peach = {255, 204, 170}
 
 function numberToColor(n)
-    if n == 0 then return color.black end
-    if n == 1 then return color.dark_blue end
-    if n == 2 then return color.dark_purple end
-    if n == 3 then return color.dark_green end
-    if n == 4 then return color.brown end
-    if n == 5 then return color.dark_grey end
-    if n == 6 then return color.light_grey end
-    if n == 7 then return color.white end
-    if n == 8 then return color.red end
-    if n == 9 then return color.orange end
+    if n == 0  then return color.black end
+    if n == 1  then return color.dark_blue end
+    if n == 2  then return color.dark_purple end
+    if n == 3  then return color.dark_green end
+    if n == 4  then return color.brown end
+    if n == 5  then return color.dark_grey end
+    if n == 6  then return color.light_grey end
+    if n == 7  then return color.white end
+    if n == 8  then return color.red end
+    if n == 9  then return color.orange end
     if n == 10 then return color.yellow end
     if n == 11 then return color.green end
     if n == 12 then return color.blue end
