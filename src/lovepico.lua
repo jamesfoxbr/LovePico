@@ -74,11 +74,11 @@ function pset(color, x, y, ...)
     if type(color) == "number" then
         local c =  numberToColor(math.floor(color % 15)) 
         love.graphics.setColor (love.math.colorFromBytes( c ))
-        love.graphics.points( x, y, ... )
+        love.graphics.points( x + 1, y + 1, ... )
     else
         local c = color
         love.graphics.setColor (love.math.colorFromBytes( c ))
-        love.graphics.points( x, y, ... )
+        love.graphics.points( x + 1, y + 1, ... )
     end
     love.graphics.setColor( 1, 1, 1, 1 )
 end
