@@ -4,11 +4,11 @@ require("src/lovepico")
 
 function _init()
     Annikka = love.graphics.newImage("images/Annikka.png")
-
+    rotate = 0
 end
 
 function _update(dt)
-
+    rotate = rotate + 1 * dt
 end
 
 function _draw()
@@ -19,6 +19,6 @@ function _draw()
     end
     -- colors os the sprite can be anything not just pico colors unless you decide to use the pico palette
     -- you need load the image first before draw here (see love.load function above)
-    spr(Annikka, 8, 1)
+    spr(Annikka, 64, 64, rotate, 1, 1, Annikka:getWidth() / 2, Annikka:getHeight() / 2)
 end
 

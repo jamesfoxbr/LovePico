@@ -1,4 +1,6 @@
 ---@diagnostic disable: undefined-global, lowercase-global
+love.graphics.setDefaultFilter("nearest", "nearest")
+canvas = love.graphics.newCanvas(128, 128)
 
 function love.load()
     _init()
@@ -6,17 +8,16 @@ function love.load()
 end
 
 function love.update(dt)
- _update(dt)
+    screen = canvas:newImageData()
+    _update(dt)
 end
 
 function love.draw()
     startCanvas(color.black)
+    love.graphics.setDefaultFilter("nearest", "nearest")
     _draw()
     endCanvas()
 end
-
-love.graphics.setDefaultFilter("nearest", "nearest")
-canvas = love.graphics.newCanvas(128, 128)
 
 function startCanvas(color)
     love.graphics.setCanvas(canvas)
@@ -80,6 +81,10 @@ function pset(color, x, y, ...)
         love.graphics.points( x, y, ... )
     end
     love.graphics.setColor( 1, 1, 1, 1 )
+end
+
+function pget(x, y)
+    return screen:getPixel( x, y )
 end
 
 function spr(drawable, x, y, r, sx, sy, ox, oy, kx, ky)

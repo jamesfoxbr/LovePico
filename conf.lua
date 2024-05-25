@@ -4,4 +4,5 @@ function love.conf(t)
     t.window.title = "test"    
     t.window.borderless = false   
     t.window.resizable = true      
+    t.console = true         
 end
